@@ -1,4 +1,5 @@
--- 1. Create Calendar Table using the below SQL script
+--The below script will create tables for our data from four files ie. Calendar, Customers, Products, and Sales
+DROP TABLE IF EXISTS calendar;
 CREATE TABLE calendar (
     date DATE PRIMARY KEY,
     year INT,
@@ -7,7 +8,8 @@ CREATE TABLE calendar (
     quarter VARCHAR(20)
 );
 
--- 2. Create Customers Table using the below SQL script
+
+DROP TABLE IF EXISTS customers;
 CREATE TABLE customers (
     customerid VARCHAR(50) PRIMARY KEY,
     customername VARCHAR(100),
@@ -15,7 +17,7 @@ CREATE TABLE customers (
     signupdate DATE
 );
 
--- 3. Create Products Table using the below SQL script
+DROP TABLE IF EXISTS products;
 CREATE TABLE products (
     productid VARCHAR(50) PRIMARY KEY,
     productname VARCHAR(100),
@@ -23,7 +25,8 @@ CREATE TABLE products (
     subcategory VARCHAR(50)
 );
 
--- 4. Create Sales Table using the below SQL script
+
+DROP TABLE IF EXISTS sales;
 CREATE TABLE sales (
     orderid VARCHAR(50),
     orderdate DATE,
@@ -33,7 +36,7 @@ CREATE TABLE sales (
     quantity INT,
     unitprice DECIMAL(10,2),
     discount DECIMAL(5,2),
-    PRIMARY KEY (order_id, product_id),
+    PRIMARY KEY (orderid, productid),
     FOREIGN KEY (customerid) REFERENCES customers(customerid),
     FOREIGN KEY (productid) REFERENCES products(productid),
     FOREIGN KEY (orderdate) REFERENCES calendar(date)
