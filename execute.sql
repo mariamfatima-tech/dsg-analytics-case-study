@@ -2,8 +2,11 @@
 
 .mode csv
 .import raw_data/sales.csv sales
-.import raw_data/customers.csv customer
-.import raw_data/products.csv product
-.import raw_data/calendar.csv calendar
+.import raw_data/customers.csv customers
+.import raw_data/products.csv products
+.import raw_data/calendar.csv calendars
+
+.headers on
+.mode column
 
 .read queries.sql
