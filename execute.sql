@@ -1,9 +1,9 @@
 .read create_tables.sql
 
 .mode csv
-.import data/sales.csv sales
-.import data/customer.csv customer
-.import data/product.csv product
-.import data/calendar.csv calendar
+.import raw_data/sales.csv sales
+.import raw_data/customers.csv customer
+.import raw_data/products.csv product
+.import raw_data/calendar.csv calendar
 
 .read queries.sql
